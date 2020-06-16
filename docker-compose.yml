@@ -1,0 +1,16 @@
+version: '3'
+services:
+  app_a:
+    # will build ./app_a/Dockerfile
+    build: ./app_a
+    ports:
+     - "5000:5000"
+  app_b:
+    # will build ./app_b/Dockerfile
+    build: ./app_b
+    ports:
+     - "5001:5001"
+  redis:
+    # will use docker hub's redis prebuilt image from here:
+    # https://hub.docker.com/_/redis/
+    image: "redis:alpine"
